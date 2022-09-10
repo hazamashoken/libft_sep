@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:16:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:48:54 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/10 12:02:08 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,12 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 // These functions use malloc()
 void	ft_calloc(size_t nmeb, size_t size);
+char	*ft_strtrim(char const *s1, char const *set);
 
 //These functions use strlen() and malloc()
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+
 
 #endif
