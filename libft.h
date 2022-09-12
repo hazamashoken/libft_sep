@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:16:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:59:27 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:00:43 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_list
 // Independent Functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
-int		ft_isasscii(int c);
+int		ft_isascii(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
