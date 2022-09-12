@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:21:35 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 19:39:49 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:02:51 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (str == NULL)
 		return (NULL);
 	while (i < len && i < ft_strlen(s))
-		*(unsigned char *)(str + i) = *(unsigned char *)(s + start + i++);
+	{
+		*(unsigned char *)(str + i) = *(unsigned char *)(s + start + i);
+		i++;
+	}
 	*(unsigned char *)(str + i) = '\0';
 	return (str);
 }

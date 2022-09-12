@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 10:25:22 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 19:38:53 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:59:13 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ char	*ft_strdup(const char *s)
 	if (str == NULL)
 		return (NULL);
 	while (*(unsigned char *)(s + i) != '\0')
-		*(unsigned char *)(str + i) = *(unsigned char *)(s + i++);
+	{
+		*(unsigned char *)(str + i) = *(unsigned char *)(s + i);
+		i++;
+	}
 	*(unsigned char *)(s + i) = '\0';
 	return (str);
 }

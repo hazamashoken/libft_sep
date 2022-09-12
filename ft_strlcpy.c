@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:25:37 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:06:26 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:59:43 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	if (size != 0)
 	{
 		while (*src != '\0' && i < size - 1)
-			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i++);
+		{
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+			i++;
+		}
 		*(unsigned char *)(dest + i) = '\0';
 	}
 	return (n);

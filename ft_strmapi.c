@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:32:39 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 19:39:25 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:59:59 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (str == NULL)
 		return (NULL);
 	while (*(str + i) != '\0')
-		*(str + i) = (*f)(i, *(unsigned char *)(s + i++));
+	{
+		*(str + i) = (*f)(i, *(unsigned char *)(s + i));
+		i++;
+	}
 	*(str + i) = '\0';
 	return (str);
 }

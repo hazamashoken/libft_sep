@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:03:00 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:05:07 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:57:31 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	i = 0;
 	while (i < n)
-		*(unsigned char *)(dest + i) = *(unsigned char *)(src + i++);
+	{
+		*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+		i++;
+	}
 	return (dest);
 }
