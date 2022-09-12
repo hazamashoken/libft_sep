@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:48:39 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:41:36 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:45:49 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #include	"libft.h"
 
-void	putchar_fd(unsigned char c, int fd)
+static void	putchar_fd(unsigned char c, int fd)
 {
 	write(fd, &c, 1);
 }
@@ -32,6 +32,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (fd < 0)
+		return ;
 	i = 0;
 	if (s == (void *)0)
 		return ;

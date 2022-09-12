@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:59:32 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 22:40:22 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:46:13 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@
 // None
 #include	"libft.h"
 
-void	putchar_fd(unsigned char c, int fd)
+static void	putchar_fd(unsigned char c, int fd)
 {
+	if (fd < 0)
+		return ;
 	write(fd, &c, 1);
 }
 
@@ -31,6 +33,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (fd < 0)
+		return ;
 	i = 0;
 	if (s == (void *)0)
 		return ;

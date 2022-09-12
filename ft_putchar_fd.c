@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:45:32 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 18:48:22 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:44:24 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
+	if (fd < 0)
+		return ;
 	write(fd, (unsigned char *)&c, 1);
 }

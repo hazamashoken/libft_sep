@@ -1,5 +1,7 @@
 NOTE TO SELF
 
+Add static to prototype for non exporting functions
+
 ft_memcmp: tester failed 3 4 5
 ft_strrchr: tester failed 5 8
 ft_strncmp: tester failed 1 2 12 13

@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:58:11 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:41:49 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:46:06 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@
 #define INTMIN -2147483648
 #define INTMINSTR "-2147483648"
 
-void	putchar_fd(unsigned char c, int fd)
+static void	putchar_fd(unsigned char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void	putstr_fd(char *s, int fd)
+static void	putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
@@ -42,6 +42,8 @@ void	putstr_fd(char *s, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == INTMIN)
 		putstr_fd(INTMINSTR, fd);
 	else if (n < 0)
