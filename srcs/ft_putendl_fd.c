@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 18:48:39 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 19:05:05 by tliangso         ###   ########.fr       */
+/*   Created: 2022/09/12 18:59:32 by tliangso          #+#    #+#             */
+/*   Updated: 2022/09/12 19:05:57 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 // fd: The file descriptor on which to write.
 
 // DESCRIPTION
-// Outputs the string ’s’ to the given file
-// descriptor.
+// Outputs the string ’s’ to the given file descriptor
+// followed by a newline.
 
 // RETURN VALUE
 // None
-
 #include	"libft.h"
 
 void	putchar_fd(unsigned char c, int fd)
@@ -28,13 +27,14 @@ void	putchar_fd(unsigned char c, int fd)
 	write(fd, &c, 1);
 }
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
 	i = 0;
 	if (s == "")
 		return ;
-	while (*(unsigned char *)(s + i) != '\0')
-		putchar_fd(*(unsigned char *)(s + i++), fd);
+	while (*(unsigned char *)(s + i))
+		putchar_fd(*(unsigned char *)(s + i), fd);
+	putchar_fd('\n', fd);
 }
