@@ -6,3 +6,4 @@ ft_strncmp: tester failed 1 2 12 13
 ft_strlcpy: loop F
 ft_calloc: tester failed 3
 ft_strdup: bus E
+ft_substr: tester failed 2 5

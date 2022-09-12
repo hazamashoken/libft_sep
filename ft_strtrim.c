@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:00:10 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:13:56 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:18:00 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	check_charset(char c, char const *set)
 	size_t	i;
 
 	i = 0;
-	while (*(unsigned char *)(set + i))
-		if (*(unsigned char *)(set + i) == c)
+	while (*(set + i))
+		if (*(set + i++) == c)
 			return (1);
 	return (0);
 }
@@ -41,9 +41,8 @@ size_t	check_front(char const *s1, char const *set)
 	size_t	i;
 
 	i = 0;
-	while (check_charset(*(unsigned char *)(s1 + i), set) \
-		&& *(unsigned char *)(s1 + i))
-			i++;
+	while (check_charset(*(s1 + i), set) && *(s1 + i))
+		i++;
 	return (i);
 }
 
@@ -74,9 +73,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (i < (end - start))
 	{
-		*(unsigned char *)(str + i) = *(unsigned char *)(s1 + start + i);
+		*(str + i) = *(s1 + start + i);
 		i++;
 	}
-	*(unsigned char *)(str + i) = '\0';
+	*(str + i) = '\0';
 	return (str);
 }
