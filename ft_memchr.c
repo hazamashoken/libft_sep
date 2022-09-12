@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:51:14 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:41:58 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:07:53 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (*(unsigned char *)(s + i) == (unsigned char)(c))
-			return (s + i);
+			return ((void *)(s + i));
 		i++;
 	}
 	return (NULL);

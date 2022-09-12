@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:47:11 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 20:35:47 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:11:33 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@
 
 #include	"libft.h"
 
-void	ft_calloc(size_t nmeb, size_t size)
+void	*ft_calloc(size_t nmeb, size_t size)
 {
 	unsigned char	*arr;
 

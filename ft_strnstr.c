@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:02:12 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:35:22 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:10:14 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len)
 	size_t	k;
 
 	i = 0;
-	if (*needle == "")
+	if (!*needle)
 		return (haystack);
 	while (*(haystack + i) && i < len)
 	{

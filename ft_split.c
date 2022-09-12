@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:13:19 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 20:58:56 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:26:23 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	check_separator(char s, char c)
 	return (s == c);
 }
 
-int	count_strings(const char *str, char c)
+int	count_string(const char *str, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -48,8 +48,8 @@ int	count_strings(const char *str, char c)
 		while (*(unsigned char *)(str + i) != '\0' \
 			&& *(unsigned char *)(str + i) != c)
 			i++;
-		return (count);
 	}
+	return (count);
 }
 
 int	strlen_sep(const char *str, char c)
@@ -58,7 +58,7 @@ int	strlen_sep(const char *str, char c)
 
 	i = 0;
 	while (*(unsigned char *)(str + i) != '\0' \
-	&& check_separators(*(unsigned char *)(str + i), c) == 0)
+	&& check_separator(*(unsigned char *)(str + i), c) == 0)
 		i++;
 	return (i);
 }
@@ -67,42 +67,45 @@ char	*word(const char *str, char c)
 {
 	size_t			word_len;
 	size_t			i;
-	unsigned char	*word;
+	char			*word;
 
 	i = 0;
 	word_len = strlen_sep(str, c);
-	word = (unsigned char *)malloc(sizeof(char) * word_len + 1);
+	word = (char *)malloc(sizeof(char) * word_len + 1);
 	if (word == NULL)
 		return (NULL);
 	while (i < word_len)
-		*(unsigned char *)(word + i) = *(unsigned char *)(str + i++);
+	{
+		*(unsigned char *)(word + i) = *(unsigned char *)(str + i);
+		i++;
+	}
 	*(unsigned char *)(word + i) = '\0';
 	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned char	**strings;
+	char			**strings;
 	size_t			i;
 	size_t			k;
 
 	i = 0;
 	k = 0;
-	if (s == "")
-		return (malloc(0));
-	strings = (unsigned char **)malloc(sizeof(unsigned char *) \
-		* (count_strings(s, c) + 1));
+	if (s == (void *)0)
+		return (NULL);
+	strings = (char **)malloc(sizeof(char *) \
+		* (count_string(s, c) + 1));
 	if (strings == NULL)
 		return (NULL);
-	while (*(unsigned char *)(s + k) != '\0')
+	while (*(char *)(s + k) != '\0')
 	{
-		while (*(unsigned char *)(s + k) != '\0' \
-			&& check_separator(*(unsigned char *)(s + k), c))
+		while (*(char *)(s + k) != '\0' \
+			&& check_separator(*(s + k), c))
 			k++;
-		if (*(unsigned char *)(s + k) != '\0')
-			*(strings + i++) = word(*(unsigned char *)(s + k), c);
-		while (*(unsigned char *)(s + k) != '\0' \
-			&& check_separators(*(unsigned char *)(s + k), c))
+		if (*(char *)(s + k) != '\0')
+			*(strings + i++) = word((s + k), c);
+		while (*(char *)(s + k) != '\0' \
+			&& check_separator(*(s + k), c))
 			k++;
 	}
 	*(strings + i) = '\0';

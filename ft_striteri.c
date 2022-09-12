@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:41:10 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 18:44:25 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:41:04 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	size_t	i;
 
 	i = 0;
-	if (s == "")
+	if (s == (void *)0)
 		return ;
 	while (*(unsigned char *)(s + i))
-		(*f)(i, *(unsigned char *)(s + i++));
+	{
+		(*f)(i, (char *)(s + i));
+		i++;
+	}
 }

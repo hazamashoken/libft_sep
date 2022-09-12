@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:48:39 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 19:05:05 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:41:36 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putstr_fd(char *s, int fd)
 	size_t	i;
 
 	i = 0;
-	if (s == "")
+	if (s == (void *)0)
 		return ;
 	while (*(unsigned char *)(s + i) != '\0')
 		putchar_fd(*(unsigned char *)(s + i++), fd);

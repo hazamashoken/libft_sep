@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 10:13:40 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 19:38:18 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:28:01 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,26 @@ size_t	check_size(long n)
 
 char	*ft_itoa(int n)
 {
-	unsigned char	*str;
+	char	*str;
 	long			nb;
 	size_t			len;
 
 	nb = n;
 	len = check_size(nb);
-	str = (unsigned char *)malloc(len * sizeof(unsigned char) * (len + 1));
+	str = (char *)malloc(len * sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	*(unsigned char *)(str + len--) = '\0';
+	*(str + len--) = '\0';
 	if (n == 0)
-		*(unsigned char *)(str) = '0';
+		*(str) = '0';
 	if (n < 0)
 	{
-		*(unsigned char *)(str) = '-';
+		*(str) = '-';
 		n *= -1;
 	}
 	while (n > 0)
 	{
-		*(unsigned char *)(str + len--) = (n % 10) + '0';
+		*(str + len--) = (n % 10) + '0';
 		n /= 10;
 	}
 	return (str);

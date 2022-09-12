@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:11:50 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 12:19:04 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:10:55 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	ft_atoi(const char *nptr)
 	while (*(unsigned char *)(nptr + i) >= '0' \
 		&& *(unsigned char *)(nptr + i) <= '9')
 	{
-		if ((res > CUTTOFF) || res == CUTTOFF \
-			&& (*(unsigned char *)(nptr + i) > limit))
+		if ((res > CUTTOFF) || (res == CUTTOFF \
+			&& (*(unsigned char *)(nptr + i) > limit)))
 			return ((check_return(neg)));
 		res = (res * 10) + (*(nptr + i++) - '0');
 	}
