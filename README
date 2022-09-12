@@ -8,4 +8,5 @@ ft_calloc: tester failed 3
 ft_strdup: bus E
 ft_substr: tester failed 2 5
 ft_strtrim: tester failed yellow 7
-
+ft_itoa: tester failed 1 2 3 4 7 9 11
+ft_strmapi: 1

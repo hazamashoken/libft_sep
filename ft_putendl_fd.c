@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:59:32 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:42:07 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:40:22 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void	ft_putendl_fd(char *s, int fd)
 	if (s == (void *)0)
 		return ;
 	while (*(unsigned char *)(s + i))
-		putchar_fd(*(unsigned char *)(s + i), fd);
+		putchar_fd(*(unsigned char *)(s + i++), fd);
 	putchar_fd('\n', fd);
 }
