@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:47:11 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 19:38:07 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:35:47 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@
 // On success, the reallocarray() function returns a pointer to the newly  allo‐
 // cated  memory.   On failure, it returns NULL and the original block of memory
 // is left untouched.
+
 #include	"libft.h"
 
 void	ft_calloc(size_t nmeb, size_t size)
