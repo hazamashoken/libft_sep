@@ -1,3 +1,4 @@
 NOTE TO SELF
 
-nothing of now
+ft_memcmp: tester failed 3 4 5
+ft_strrchr: loop forever

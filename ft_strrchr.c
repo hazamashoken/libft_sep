@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:46:54 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:07:26 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:06:12 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,11 @@ char	*ft_strrchr(char *s, int c)
 	i = 0;
 	k = -1;
 	while (i < ft_strlen(s))
-		if (*(unsigned char *)(s + i++) == (unsigned char)c)
-			k = --i;
+	{
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
+			k = i;
+		i++;
+	}
 	if (k != -1)
 		return (s + k);
 	return (0);
