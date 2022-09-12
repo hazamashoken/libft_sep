@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:13:14 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:04:58 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:57:01 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n != 0)
 		{
+			n--;
 			*(unsigned char *)(dest + n) = *(unsigned char *)(src + n);
-			n++;
 		}
 	}
 	else
