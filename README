@@ -7,3 +7,5 @@ ft_strlcpy: loop F
 ft_calloc: tester failed 3
 ft_strdup: bus E
 ft_substr: tester failed 2 5
+ft_strtrim: tester failed yellow 7
+

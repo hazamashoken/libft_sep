@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:13:19 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:44:54 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:27:42 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,43 +31,41 @@ int	check_separator(char s, char c)
 	return (s == c);
 }
 
-int	count_string(const char *str, char c)
+size_t	count_string(const char *str, char c)
 {
 	size_t	i;
 	size_t	count;
 
 	count = 0;
 	i = 0;
-	while (*(unsigned char *)(str + i) != '\0')
+	while (*(str + i) != '\0')
 	{
-		while (*(unsigned char *)(str + i) != '\0' \
-			&& *(unsigned char *)(str + i) == c)
+		while (*(str + i) != '\0' && *(str + i) == c)
 			i++;
-		if (*(unsigned char *)(str + i) != '\0')
+		if (*(str + i) != '\0')
 			count++;
-		while (*(unsigned char *)(str + i) != '\0' \
-			&& *(unsigned char *)(str + i) != c)
+		while (*(str + i) != '\0' && *(str + i) != c)
 			i++;
 	}
 	return (count);
 }
 
-int	strlen_sep(const char *str, char c)
+size_t	strlen_sep(const char *str, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (*(unsigned char *)(str + i) != '\0' \
-	&& check_separator(*(unsigned char *)(str + i), c) == 0)
+	while (*(str + i) != '\0' \
+	&& check_separator(*(str + i), c) == 0)
 		i++;
 	return (i);
 }
 
 char	*word(const char *str, char c)
 {
-	size_t			word_len;
-	size_t			i;
-	char			*word;
+	size_t	word_len;
+	size_t	i;
+	char	*word;
 
 	i = 0;
 	word_len = strlen_sep(str, c);
@@ -76,36 +74,33 @@ char	*word(const char *str, char c)
 		return (NULL);
 	while (i < word_len)
 	{
-		*(unsigned char *)(word + i) = *(unsigned char *)(str + i);
+		*(word + i) = *(str + i);
 		i++;
 	}
-	*(unsigned char *)(word + i) = '\0';
+	*(word + i) = '\0';
 	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**strings;
-	size_t			i;
-	size_t			k;
+	char	**strings;
+	size_t	i;
+	size_t	k;
 
 	i = 0;
 	k = 0;
 	if (s == (void *)0)
-		return (NULL);
-	strings = (char **)malloc(sizeof(char *) \
-		* (count_string(s, c) + 1));
+		return (malloc(0));
+	strings = (char **)malloc(sizeof(char *) * (count_string(s, c) + 1));
 	if (strings == NULL)
 		return (NULL);
-	while (*(char *)(s + k) != '\0')
+	while (*(s + k) != '\0')
 	{
-		while (*(char *)(s + k) != '\0' \
-			&& check_separator(*(s + k), c))
+		while (*(s + k) != '\0' && check_separator(*(s + k), c))
 			k++;
-		if (*(char *)(s + k) != '\0')
+		if (*(s + k) != '\0')
 			*(strings + i++) = word((s + k), c);
-		while (*(char *)(s + k) != '\0' \
-			&& check_separator(*(s + k), c))
+		while (*(s + k) != '\0' && check_separator(*(s + k), c))
 			k++;
 	}
 	*(strings + i) = 0;
