@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:16:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 18:35:34 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:42:32 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		ft_tolower(int c);
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strnstr(char *haystack, char *needle, size_t len);
 int		ft_atoi(const char *nptr);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 // Dependent Functions
 // These functions use strlen()
