@@ -6,32 +6,29 @@
 #    By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 10:06:54 by tliangso          #+#    #+#              #
-#    Updated: 2022/09/12 19:03:10 by tliangso         ###   ########.fr        #
+#    Updated: 2022/09/12 19:59:14 by tliangso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-DIRSRC	=	srcs/
-
-BONUS_DIRSRC	=	srcs/bonus/
-
-EXTRA_DIRSRC	=	srcs/extra/
+DIRSRC	=	./
 
 SRC		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 			ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
 			ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c \
 			ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 			ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 
-BONUS	=
+BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 
 EXTRA	=
 
 SRCS	= ${addprefix ${DIRSRC}, ${SRC}}
 
-BONUS_SRCS = ${addprefix ${BONUS_DIRSRC}, ${BONUS}}
+BONUS_SRCS = ${addprefix ${DIRSRC}, ${BONUS}}
 
-EXTRA_SRCS = ${addprefix ${EXTRA_DIRSRC}, ${EXTRA}}
+EXTRA_SRCS = ${addprefix ${DIRSRC}, ${EXTRA}}
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -41,7 +38,7 @@ EXRTA_OBJS = ${EXTRA_SRCS:.c=.o}
 
 HEAD	= .
 
-NAMED	= libft.a
+NAME	= libft.a
 
 CC		= gcc
 

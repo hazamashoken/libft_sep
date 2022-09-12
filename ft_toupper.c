@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:38:57 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:07:36 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:59:07 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 // RETURN VALUE
 //        The  value  returned  is that of the converted letter, or c if
 //        the conversion was not possible.
+
 #include	"libft.h"
 
 int	ft_toupper(int c)

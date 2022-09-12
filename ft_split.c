@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:13:19 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/11 10:11:37 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:38:43 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	strings = (unsigned char **)malloc(sizeof(unsigned char *) \
 		* (count_strings(s, c) + 1));
 	if (strings == NULL)
-		return (strings);
+		return (NULL);
 	while (*(unsigned char *)(s + k) != '\0')
 	{
 		while (*(unsigned char *)(s + k) != '\0' \

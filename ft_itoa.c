@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 10:13:40 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/11 10:56:29 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:38:18 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	len = check_size(nb);
 	str = (unsigned char *)malloc(len * sizeof(unsigned char) * (len + 1));
 	if (str == NULL)
-		return (str);
+		return (NULL);
 	*(unsigned char *)(str + len--) = '\0';
 	if (n == 0)
 		*(unsigned char *)(str) = '0';

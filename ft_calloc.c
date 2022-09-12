@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:47:11 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 10:52:17 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:38:07 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_calloc(size_t nmeb, size_t size)
 	if (nmeb <= 0 || size <= 0)
 		return (NULL);
 	arr = (void *)malloc(nmeb * size);
-	if (arr == 0)
+	if (arr == NULL)
 		return (NULL);
 	ft_bzero(arr, nmeb * size);
 	return (arr);
