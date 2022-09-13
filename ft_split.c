@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:13:19 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 22:37:03 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:21:17 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@
 
 #include	"libft.h"
 
-int	check_separator(char s, char c)
+static int	check_separator(char s, char c)
 {
 	return (s == c);
 }
 
-size_t	count_string(const char *str, char c)
+static size_t	count_string(const char *str, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -50,7 +50,7 @@ size_t	count_string(const char *str, char c)
 	return (count);
 }
 
-size_t	strlen_sep(const char *str, char c)
+static size_t	ft_strlen_sep(const char *str, char c)
 {
 	size_t	i;
 
@@ -61,14 +61,14 @@ size_t	strlen_sep(const char *str, char c)
 	return (i);
 }
 
-char	*word(const char *str, char c)
+static char	*word(const char *str, char c)
 {
 	size_t	word_len;
 	size_t	i;
 	char	*word;
 
 	i = 0;
-	word_len = strlen_sep(str, c);
+	word_len = ft_strlen_sep(str, c);
 	word = (char *)malloc(sizeof(char) * word_len + 1);
 	if (word == NULL)
 		return (NULL);

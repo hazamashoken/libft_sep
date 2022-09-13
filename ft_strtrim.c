@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:00:10 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 20:09:28 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:22:57 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 #include	"libft.h"
 
-int	check_charset(char c, char const *set)
+static int	check_charset(char c, char const *set)
 {
 	size_t	i;
 

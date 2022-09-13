@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 10:13:40 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 20:34:19 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:21:52 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 #include	"libft.h"
 
-size_t	numlen(long nb)
+static size_t	numlen(long nb)
 {
 	size_t	len;
 

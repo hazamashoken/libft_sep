@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:46:55 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:12:27 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:19:43 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (str == NULL)
 		return (NULL);
 	i = 0;
-	while (*(unsigned char *)(s1 + i) != '\0')
-		*(unsigned char *)(str + k++) = *(unsigned char *)(s1 + i++);
+	while (*(s1 + i) != '\0')
+		*(str + k++) = *(s1 + i++);
 	i = 0;
-	while (*(unsigned char *)(s2 + i) != '\0')
-		*(unsigned char *)(str + k++) = *(unsigned char *)(s2 + i++);
-	*(unsigned char *)(str + k) = '\0';
+	while (*(s2 + i) != '\0')
+		*(str + k++) = *(s2 + i++);
+	*(str + k) = '\0';
 	return (str);
 }

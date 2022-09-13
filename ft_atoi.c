@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:11:50 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 20:00:27 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:21:39 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 #define CUTTOFF 922337203685477580
 
-char	check_neg(int neg)
+static char	check_neg(int neg)
 {
 	if (neg == 1)
 		return ('7');
@@ -36,7 +36,7 @@ char	check_neg(int neg)
 		return ('8');
 }
 
-int	check_return(int neg)
+static int	check_return(int neg)
 {
 	if (neg == 1)
 		return (-1);
