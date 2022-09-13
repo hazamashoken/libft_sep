@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:21:35 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 22:40:50 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:44:45 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@
 // 	return (str);
 // }
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	s_len;
-	char	*res;
+	char	*str;
 
 	if (!s)
 		return (NULL);
@@ -65,9 +65,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		start = s_len;
 		len = 0;
 	}
-	res = malloc(sizeof(char) * (len + 1));
-	if (res == NULL)
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	ft_strlcpy(res, (char *)(s + start), len + 1);
-	return (res);
+	ft_strlcpy(str, (char *)s + start, len + 1);
+	return (str);
 }
