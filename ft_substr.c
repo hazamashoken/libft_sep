@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:21:35 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 22:39:09 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:40:50 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		start = s_len;
 		len = 0;
 	}
-	res = malloc((len + 1) * sizeof(char));
-	if (!res)
+	res = malloc(sizeof(char) * (len + 1));
+	if (res == NULL)
 		return (NULL);
 	ft_strlcpy(res, (char *)(s + start), len + 1);
 	return (res);
