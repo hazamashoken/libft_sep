@@ -2,13 +2,13 @@ NOTE TO SELF
 
 Add static to prototype for non exporting functions
 
-ft_memcmp: tester failed 3 4 5
+
 ft_strrchr: tester failed 5 8
 ft_strncmp: tester failed 1 2 12 13
-ft_strlcpy: loop F
 ft_calloc: tester failed 3
-ft_strdup: bus E
 ft_substr: tester failed 2 5
 ft_strtrim: tester failed yellow 7
+
 ft_itoa: tester failed 1 2 3 4 7 9 11
+
 ft_strmapi: 1

@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:32:39 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:29:15 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:08:29 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	size_t	i;
 
-	i = 0;
-	if (s == (void *)0)
+	if (s == NULL)
 		return (NULL);
-	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (str == NULL)
 		return (NULL);
-	while (*(str + i) != '\0')
+	i = 0;
+	while (i < ft_strlen(s))
 	{
-		*(str + i) = (*f)(i, *(char *)(s + i));
+		*(str + i) = (*f)(i, *(s + i));
 		i++;
 	}
 	*(str + i) = '\0';
