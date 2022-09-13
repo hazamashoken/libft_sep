@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:21:35 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 21:51:06 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 21:59:31 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	size_t	s_len;
 	char	*str;
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	s_len = ft_strlen(s);
+	if (len >= s_len)
+		len = s_len;
+	if (start > s_len)
 	{
-		str = malloc(sizeof(char) * 1);
-		if (str == NULL)
-			return (NULL);
-		*str = '\0';
-		return (str);
+		start = s_len;
+		len = 0;
 	}
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (*(s + start) && i < len)
-		*(str + i++) = *(s + start++);
-	*(str + i) = '\0';
+	ft_strlcpy(str, (char *)s + start, len + 1);
 	return (str);
 }
