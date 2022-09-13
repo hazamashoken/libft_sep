@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 20:28:19 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 22:53:54 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 09:15:52 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,22 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*tmp;
-	t_list	*new_tmp;
+	t_list	*new_lst;
 	t_list	*new_node;
 
-	if (lst == NULL)
+	if (!f || !del)
 		return (NULL);
-	new_node = ft_lstnew(ft_strdup((*f)(lst->content)));
-	if (new_node == NULL)
-		return (NULL);
-	new_tmp = new_node;
-	tmp = lst;
-	while (lst->next != NULL)
+	new_lst = NULL;
+	while (lst != NULL)
 	{
-		lst = lst->next;
-		new_node->next = ft_lstnew(ft_strdup((*f)(lst->content)));
-		if (new_node->next == NULL)
+		new_node = ft_lstnew((*f)(lst->content));
+		if (new_node == NULL)
 		{
-			ft_lstclear(&new_tmp, del);
+			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
-		new_node = new_node->next;
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst->next;
 	}
-	ft_lstclear(&tmp, del);
-	return (new_tmp);
+	return (new_lst);
 }
