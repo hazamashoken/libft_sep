@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:16:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 09:38:11 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:37:31 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(char *haystack, char *needle, size_t len);
 int		ft_atoi(const char *nptr);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strrchr(char *s, int c);
 
 // Dependent Functions
 // These functions use strlen()
 size_t	ft_strlcpy(char *dest, char *src, size_t size);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
 char	*ft_strchr(char *s, int c);
-char	*ft_strrchr(char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 // These functions use malloc()
