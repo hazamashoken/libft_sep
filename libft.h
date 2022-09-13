@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:16:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 21:03:41 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:33:56 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,12 @@ void	*ft_calloc(size_t nmeb, size_t size);
 
 //These functions use strlen() and malloc()
 char	*ft_strdup(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+// These functions use strlen() , malloc() and ft_strlcpy()
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 //These functions use write()
 void	ft_putchar_fd(char c, int fd);
