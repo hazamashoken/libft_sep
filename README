@@ -4,6 +4,5 @@ Add static to prototype for non exporting functions
 
 
 ft_strrchr: tester failed 6
-ft_calloc: tester failed 3
 ft_substr: tester failed 2 10
 
