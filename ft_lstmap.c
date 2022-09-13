@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 20:28:19 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 09:15:52 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:20:01 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_lst = NULL;
 	while (lst != NULL)
 	{
-		new_node = ft_lstnew((*f)(lst->content));
+		new_node = ft_lstnew(f(lst->content));
 		if (new_node == NULL)
 		{
 			ft_lstclear(&new_lst, del);

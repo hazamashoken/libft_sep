@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:32:39 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 10:08:29 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:19:34 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == NULL)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:47:11 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 09:33:30 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:18:30 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	*ft_calloc(size_t nmeb, size_t size)
 {
 	unsigned char	*ptr;
 
+	if (size < 0)
+		return (NULL);
 	ptr = (void *)malloc(nmeb * size);
 	if (ptr == NULL)
 		return (NULL);
