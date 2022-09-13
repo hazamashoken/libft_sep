@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:46:54 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 10:35:57 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 10:45:43 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*ft_strrchr(char *s, int c)
 	size_t	i;
 	char	*ptr;
 
+	if (c == '\0')
+		return ("");
 	ptr = NULL;
 	i = 0;
 	while (*(s + i) != '\0')
@@ -49,7 +51,5 @@ char	*ft_strrchr(char *s, int c)
 			ptr = (s + i);
 		i++;
 	}
-	if (c == '\0')
-		ptr = (s + ++i);
 	return (ptr);
 }
