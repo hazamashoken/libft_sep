@@ -3,6 +3,6 @@ NOTE TO SELF
 Add static to prototype for non exporting functions
 
 
-ft_strrchr: tester failed 6
 ft_substr: tester failed 2 10
-
+/* 2 */ mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
+/* 10  mbueno-g */ mcheck(s, 2); free(s); free(str); showLeaks();
