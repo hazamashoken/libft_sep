@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:21:35 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 22:44:45 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:46:27 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,7 @@
 
 #include	"libft.h"
 
-// char	*ft_substr(char const *s, unsigned int start, size_t len)
-// {
-// 	size_t	s_len;
-// 	char	*str;
-
-// 	if (!s)
-// 		return (NULL);
-// 	s_len = ft_strlen(s);
-// 	if (len >= s_len - start)
-// 		len = s_len - start;
-// 	if (start > s_len)
-// 	{
-// 		start = s_len;
-// 		len = 0;
-// 	}
-// 	str = malloc(sizeof(char) * (len + 1));
-// 	if (str == NULL)
-// 		return (NULL);
-// 	ft_strlcpy(str, (char *)s + start, len + 1);
-// 	return (str);
-// }
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	size_t	s_len;
 	char	*str;
@@ -60,7 +38,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (len >= s_len - start)
 		len = s_len - start;
-	if (start > len)
+	if (start > s_len)
 	{
 		start = s_len;
 		len = 0;
