@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:13:14 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:57:01 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:52:12 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (dest == (void *)0 && src == (void *)0)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	if (dest > src)
 	{
