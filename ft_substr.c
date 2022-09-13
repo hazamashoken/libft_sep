@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:21:35 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 21:59:31 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:10:07 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-	if (len >= s_len)
-		len = s_len;
+	if (len >= s_len - start)
+		len = s_len - start;
 	if (start > s_len)
 	{
 		start = s_len;
