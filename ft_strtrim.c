@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:00:10 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 10:18:57 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 20:09:28 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (*(s1 + start) && check_charset(*(s1 + start), set))
 		start++;
-	while (end > start && check_charset(*(s1 + end), set))
+	while (end > start && check_charset(*(s1 + end - 1), set))
 		end--;
 	str = malloc(sizeof(char) * (end - start + 1));
 	if (str == NULL)
