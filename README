@@ -3,10 +3,7 @@ NOTE TO SELF
 Add static to prototype for non exporting functions
 
 
-ft_strrchr: tester failed 5 8
-ft_strncmp: tester failed 1 2 12 13
+ft_strrchr: tester failed 6
 ft_calloc: tester failed 3
-ft_substr: tester failed 2 6 8 10
-ft_strtrim: tester failed yellow 7
-ft_itoa: tester failed 1 2 3 4 6 7 8 9 10 11 12
-ft_strmapi: 1
+ft_substr: tester failed 2 10
+

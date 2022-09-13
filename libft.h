@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:16:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 10:37:31 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 21:03:41 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 # include	<stdlib.h>
 # include	<stdio.h>
 # include	<limits.h>
+
+# ifndef SIZE_MAX
+/* Limit of `size_t' type.  */
+#  if __WORDSIZE == 64
+#   define SIZE_MAX                (18446744073709551615UL)
+#  else
+#   define SIZE_MAX                (4294967295U)
+#  endif
+# endif
 
 typedef struct s_list
 {
