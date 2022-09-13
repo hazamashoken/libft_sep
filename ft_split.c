@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:13:19 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 23:21:17 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:39:38 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	if (s == (void *)0)
-		return (malloc(0));
+		return (NULL);
 	strings = (char **)malloc(sizeof(char *) * (count_string(s, c) + 1));
 	if (strings == NULL)
 		return (NULL);
