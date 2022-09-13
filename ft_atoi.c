@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:11:50 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/13 19:29:28 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 20:00:27 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,16 @@ int	ft_atoi(const char *nptr)
 	neg = 1;
 	while ((*(nptr + i) >= '\a' && *(nptr + i) <= '\r') || *(nptr + i) == ' ')
 		i++;
-	if (*(nptr + i) == '-' || *(nptr + i) <= '+')
+	if (*(nptr + i) == '-' || *(nptr + i) == '+')
 		if (*(nptr + i++) == '-')
 			neg = -1;
 	limit = check_neg(neg);
 	res = 0;
-	while (*(nptr + i))
+	while (*(nptr + i) >= '0' && *(nptr + i) <= '9')
 	{
-		if (*(nptr + i) >= '0' && *(nptr + i) <= '9')
-		{
-			if ((res > CUTTOFF) || (res == CUTTOFF && (*(nptr + i) > limit)))
-				return ((check_return(neg)));
-			res = (res * 10) + (*(nptr + i) - '0');
-		}
-		i++;
+		if ((res > CUTTOFF) || (res == CUTTOFF && (*(nptr + i) > limit)))
+			return ((check_return(neg)));
+		res = (res * 10) + (*(nptr + i++) - '0');
 	}
 	return (res * neg);
 }
