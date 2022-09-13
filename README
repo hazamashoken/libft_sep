@@ -2,9 +2,7 @@ NOTE TO SELF
 
 Add static to prototype for non exporting functions
 
-
-ft_substr: tester failed 10
-str = strdup("0123456789");
-s = ft_substr(str, 9, 10);
-/* 9  mbueno-g */ check(!strcmp(s, "9"));
-/* 10  mbueno-g */ mcheck(s, 2); free(s); free(str); showLeaks();
+ft_strlcat
+= Test 7 ===================================================
+$> ./user_exe 07
+Command './user_exe 07' got killed by an Abort

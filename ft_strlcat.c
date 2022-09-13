@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:32:39 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/10 11:06:19 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:12:01 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	while (*(unsigned char *)(dest + j) != '\0')
+	while (*(dest + j) != '\0' && j < size)
 		j++;
 	dlen = j;
 	slen = ft_strlen(src);
 	if (size == 0 || size <= dlen)
 		return (slen + size);
-	while (*(unsigned char *)(src + i) && i < size - dlen - 1)
-		*(unsigned char *)(dest + j++) = *(unsigned char *)(src + i++);
-	*(unsigned char *)(dest + j) = '\0';
+	while (*(src + i) && i < size - dlen - 1)
+		*(dest + j++) = *(src + i++);
+	*(dest + j) = '\0';
 	return (dlen + slen);
 }
