@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:11:50 by tliangso          #+#    #+#             */
-/*   Updated: 2022/09/12 21:10:55 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/09/13 19:24:46 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 // RETURN VALUE
 //        The converted value.
+
 #include	"libft.h"
 
 #define CUTTOFF 922337203685477580
@@ -52,19 +53,16 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	neg = 1;
-	while ((*(nptr + i) >= 9 && *(nptr + i) <= 13) || *(nptr + i) == ' ')
+	while ((*(nptr + i) >= '\a' && *(nptr + i) <= '\r') || *(nptr + i) == ' ')
 		i++;
-	if (*(unsigned char *)(nptr + i) == '-' \
-		|| *(unsigned char *)(nptr + i) <= '+')
-		if (*(unsigned char *)(nptr + i++) == '-')
+	if (*(nptr + i) == '-' || *(nptr + i) <= '+')
+		if (*(nptr + i++) == '-')
 			neg = -1;
 	limit = check_neg(neg);
 	res = 0;
-	while (*(unsigned char *)(nptr + i) >= '0' \
-		&& *(unsigned char *)(nptr + i) <= '9')
+	while (*(nptr + i) >= '0' && *(nptr + i) <= '9')
 	{
-		if ((res > CUTTOFF) || (res == CUTTOFF \
-			&& (*(unsigned char *)(nptr + i) > limit)))
+		if ((res > CUTTOFF) || (res == CUTTOFF && (*(nptr + i) > limit)))
 			return ((check_return(neg)));
 		res = (res * 10) + (*(nptr + i++) - '0');
 	}
